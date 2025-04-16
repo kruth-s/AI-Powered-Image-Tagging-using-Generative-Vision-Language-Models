@@ -1,4 +1,4 @@
-AI-Powered Image Tagging using Generative & Vision-Language Models
+#AI-Powered Image Tagging using Generative & Vision-Language Models
 
 This project demonstrates an AI-based pipeline for automated image tagging using state-of-the-art generative and vision-language models. It leverages BLIP for caption generation, KeyBERT for keyword extraction, and CLIP for filtering visually relevant tags.
 
