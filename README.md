@@ -1,33 +1,29 @@
-#AI-Powered Image Tagging using Generative & Vision-Language Models
+# AI-Powered Image Tagging using Generative & Vision-Language Models
 
-This project demonstrates an AI-based pipeline for automated image tagging using state-of-the-art generative and vision-language models. It leverages BLIP for caption generation, KeyBERT for keyword extraction, and CLIP for filtering visually relevant tags.
+This project demonstrates an AI-powered pipeline for **automated image tagging** using state-of-the-art generative and vision-language models. It leverages **BLIP** for image captioning, **KeyBERT** for keyword extraction, and **CLIP** for filtering visually relevant tags.
 
-Features
-Generate descriptive captions using BLIP
+## Features
 
-Extract keywords from captions using KeyBERT
+- Generate descriptive captions from raw images using BLIP
+- Extract keywords from captions using KeyBERT
+- Filter tags based on visual relevance using CLIP
+- Fully zero-shot – works on unseen images without retraining
+- Accepts both uploaded images and image URLs
 
-Validate visual relevance using CLIP
+## Tech Stack
 
-Fully zero-shot — no training required
+- [BLIP (Salesforce)](https://huggingface.co/Salesforce/blip-image-captioning-base) – Vision-Language Captioning
+- [KeyBERT](https://github.com/MaartenGr/KeyBERT) – Keyword Extraction with BERT embeddings
+- [CLIP (OpenAI)](https://github.com/openai/CLIP) – Image-Text Similarity
+- PyTorch, Hugging Face Transformers, Sentence-Transformers
 
-Works with local image uploads or image URLs
+## Project Structure
 
-Tech Stack
-BLIP (Salesforce) – Image Captioning
+├── AI_Image_Tagger.ipynb # Main Google Colab notebook 
+├── README.md # Project documentation 
+└── examples/ # Sample images and results (optional)
 
-KeyBERT – Keyword Extraction
-
-CLIP (OpenAI) – Image-Text Similarity
-
-PyTorch, Transformers, Sentence-Transformers
-
-Project Structure
-
-├── AI_Image_Tagger.ipynb     # Main Colab Notebook
-├── README.md                 # Project Documentation
-└── examples/                 # Example images and results
-Installation (for local development)
+## Installation (for local development)
 
 pip install transformers==4.30.2
 pip install git+https://github.com/openai/CLIP.git
@@ -37,27 +33,28 @@ pip install timm
 pip install torchvision
 
 How It Works
-Load Image – Upload or fetch image from URL
 
-Caption Generation – BLIP generates a natural language description
+Load Image – Upload an image or provide an image URL.
 
-Keyword Extraction – KeyBERT extracts keyphrases from the caption
+Caption Generation (BLIP) – Generate a descriptive caption of the image.
 
-Tag Filtering – CLIP filters tags based on image-text similarity
+Keyword Extraction (KeyBERT) – Extract meaningful keywords from the caption.
 
-Output – Final tags reflect visually relevant concepts
+Tag Filtering (CLIP) – Filter out tags not visually relevant to the image.
 
-Example
-Caption: A red sports car driving on a coastal road.
-Initial Tags: ['sports car', 'coastal road', 'red car']
-Final Tags: ['sports car', 'red car']
+Output – Display the caption and final tags.
+
+Example Output
+Caption: A red Audi concept car displayed on a futuristic showroom floor.
+Initial Tags: ['audi concept', 'concept car', 'audi', 'car', 'concept']
+Final Tags: ['audi concept', 'concept car', 'audi']
 
 References
-BLIP on HuggingFace
+BLIP on Hugging Face
 
 KeyBERT GitHub
 
 CLIP GitHub
 
 License
-This project is for educational purposes under fair use of open-source models.
+This project is for educational purposes only. All models used are open-source and licensed by their respective organizations.
