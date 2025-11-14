@@ -1,0 +1,5 @@
+{
+  "name": "AI Image Tagger",
+  "description": "An AI-powered application that automatically generates descriptive captions and visually relevant tags for any uploaded image using the Gemini API.",
+  "requestFramePermissions": []
+}
