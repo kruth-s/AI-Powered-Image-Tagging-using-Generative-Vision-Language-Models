@@ -1,20 +1,43 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# AI Powered Image Tagging
 
-# Run and deploy your AI Studio app
+This project uses Generative & Vision-Language Models (BLIP, KeyBERT, CLIP) to automatically tag images.
 
-This contains everything you need to run your app locally.
+## Features
+1. **Image Captioning**: Uses BLIP to generate a descriptive caption for the image.
+2. **Keyword Extraction**: Uses KeyBERT to extract relevant keywords from the caption.
+3. **Tag Filtering**: Uses CLIP to filter tags ensuring they are visually relevant to the image.
 
-View your app in AI Studio: https://ai.studio/apps/drive/1feZXJN5imqSXn4TtBqOzSLIwb9ogxqcs
+## Installation
 
-## Run Locally
+1. Clone the repository.
+2. Install the required dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+   *Note: This might take a while as it downloads large model files.*
 
-**Prerequisites:**  Node.js
+## Usage
 
+Run the `main.py` script with an image path or URL:
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+```bash
+python main.py path/to/image.jpg
+```
+
+Or with a URL:
+
+```bash
+python main.py "https://example.com/image.jpg"
+```
+
+### Optional Arguments
+- `--threshold`: Set the CLIP similarity threshold (default: 0.25).
+  ```bash
+  python main.py image.jpg --threshold 0.3
+  ```
+
+## Project Structure
+- `main.py`: Entry point script.
+- `models/`: Contains the model wrapper classes (BLIP, KeyBERT, CLIP).
+- `utils/`: Utility functions (e.g., image loading).
+- `requirements.txt`: Python dependencies.
