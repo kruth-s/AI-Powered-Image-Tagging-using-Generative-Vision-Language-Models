@@ -6,7 +6,7 @@ import { ResultsDisplay } from './components/ResultsDisplay';
 import { Spinner } from './components/Spinner';
 import { ErrorMessage } from './components/ErrorMessage';
 import { WelcomeMessage } from './components/WelcomeMessage';
-import { generateImageTags } from './services/geminiService';
+import { generateImageTags } from './services/apiService';
 import { ImageAnalysisResult, InlineData } from './types';
 
 const App: React.FC = () => {
@@ -65,7 +65,7 @@ const App: React.FC = () => {
         </div>
       </main>
       <footer className="text-center py-4 text-gray-500 text-sm">
-        <p>Powered by Gemini API. Designed for exceptional UI/UX.</p>
+        <p>Powered by BLIP, KeyBERT & CLIP. Designed for exceptional UI/UX.</p>
       </footer>
     </div>
   );

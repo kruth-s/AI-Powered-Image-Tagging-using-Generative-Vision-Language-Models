@@ -7,3 +7,6 @@ torchvision
 torch
 pillow
 requests
+fastapi
+uvicorn
+python-multipart
